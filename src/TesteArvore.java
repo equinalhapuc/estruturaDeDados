@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class testaArvore {
+public class TesteArvore {
 
 	public static void main(String[] args) {
 		Integer valorDigitado = null;

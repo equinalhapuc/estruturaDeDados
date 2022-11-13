@@ -38,7 +38,7 @@ public class Arvore {
 	
 	public void preOrdem(No no) {
 		if (no != null) {
-			System.out.println(no.getValor());
+			System.out.print(no.getValor() + " ");
 			preOrdem(no.getEsquerda());
 			preOrdem(no.getDireita());
 		}
@@ -53,7 +53,7 @@ public class Arvore {
 	public void inOrdem(No no) {
 		if (no != null) {
 			inOrdem(no.getEsquerda());
-			System.out.println(no.getValor());
+			System.out.print(no.getValor() + " ");
 			inOrdem(no.getDireita());
 		}
 	}
@@ -68,7 +68,7 @@ public class Arvore {
 		if (no != null) {
 			posOrdem(no.getEsquerda());
 			posOrdem(no.getDireita());
-			System.out.println(no.getValor());
+			System.out.print(no.getValor() + " ");
 		}
 	}
 }
