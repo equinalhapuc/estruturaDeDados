@@ -9,7 +9,7 @@ public class TesteArvore {
 		Scanner sc = new Scanner(System.in);
 		
 		while(true) {
-			System.out.print("Digite o valor a ser inserido na árvore: ");
+			System.out.print("Digite o valor a ser inserido na árvore [ENTER] para sair: ");
 			String text = sc.nextLine();
 		    try {
 		    	valorDigitado = Integer.parseInt(text);
@@ -24,11 +24,37 @@ public class TesteArvore {
 		    }
 		}
 		
-		sc.close();
+		while(true) {
+			System.out.println("\n\nComo deseja visualizar a árvore? [ENTER] para sair: ");
+			System.out.print("\t1-Pré-Ordem\n\t2-In-Ordem\n\t3-Pós-Ordem\n\nDigite uma opção: ");
+			String text = sc.nextLine();
+		    try {
+		    	valorDigitado = Integer.parseInt(text);
+		    	switch(valorDigitado) {
+		    	case 1:
+		    		arvore.preOrdem();
+		    		continue;
+		    	case 2:
+		    		arvore.inOrdem();
+		    		continue;
+		    	case 3:
+		    		arvore.posOrdem();
+		    		continue;
+		    	default:
+		    		break;
+		    	}
+		    } catch (NumberFormatException exp) {
+		        if (text.isEmpty()) {
+		            break;
+		        } else {
+		            System.out.println(text + " não é um inteiro");
+		            continue;
+		        }
+		    }
+		}
 		
-		arvore.preOrdem();
-		arvore.inOrdem();
-		arvore.posOrdem();
+		sc.close();
+
 	}
 
 }
