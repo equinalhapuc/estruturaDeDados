@@ -26,7 +26,7 @@ public class TesteArvore {
 		
 		while(true) {
 			System.out.println("\n\nComo deseja visualizar a árvore? [ENTER] para sair: ");
-			System.out.print("\t1-Pré-Ordem\n\t2-In-Ordem\n\t3-Pós-Ordem\n\nDigite uma opção: ");
+			System.out.print("\t1-Pré-Ordem\n\t2-In-Ordem\n\t3-Pós-Ordem\n\t4-Remover um valor\n\nDigite uma opção: ");
 			String text = sc.nextLine();
 		    try {
 		    	valorDigitado = Integer.parseInt(text);
@@ -39,6 +39,23 @@ public class TesteArvore {
 		    		continue;
 		    	case 3:
 		    		arvore.posOrdem();
+		    		continue;
+		    	case 4:
+		    		while(true) {
+		    			System.out.print("Digite o valor: ");
+		    			text = sc.nextLine();
+		    		    try {
+		    		    	valorDigitado = Integer.parseInt(text);
+		    		    	arvore.remove(valorDigitado);
+		    		    } catch (NumberFormatException exp) {
+		    		        if (text.isEmpty()) {
+		    		            break;
+		    		        } else {
+		    		            System.out.println(text + " não é um inteiro");
+		    		            continue;
+		    		        }
+		    		    }
+		    		}
 		    		continue;
 		    	default:
 		    		break;
